@@ -12,13 +12,13 @@ lot_summary <- sus_table %>% group_by(Manufacturing_Lot) %>% summarize(Mean_PSI=
 
 t.test(sus_table$PSI,mu=1500)
 
-Lot1 <- subset(lot_summary, Manufacturing_Lot=='Lot1')
-Lot2 <- subset(lot_summary, Manufacturing_Lot=='Lot2')
-Lot3 <- subset(lot_summary, Manufacturing_Lot=='Lot3')
+Lot1 <- subset(sus_table, Manufacturing_Lot=='Lot1')
+Lot2 <- subset(sus_table, Manufacturing_Lot=='Lot2')
+Lot3 <- subset(sus_table, Manufacturing_Lot=='Lot3')
 
 t.test(lot_summary$Mean_PSI,mu=1500,subset(lot_summary, Manufacturing_Lot=='Lot1'))
 
-t.test(Lot1$Mean_PSI,mu=1500)
-t.test(Lot2$Mean_PSI,mu=1500)
-t.test(Lot3$Mean_PSI,mu=1500)
+t.test(Lot1$PSI,mu=1500)
+t.test(Lot2$PSI,mu=1500)
+t.test(Lot3$PSI,mu=1500)
 
